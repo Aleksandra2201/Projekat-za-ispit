@@ -1,0 +1,62 @@
+Map.addLayer(shp, { },'My Polygon')
+//scale txt front relative to the current map scale
+var scale = Map.getScale()  
+
+// ImageCollection-animated GIF.
+
+// roi or aoi - rectangle around Greece.
+
+Map.addLayer(rect);
+Map.centerObject(rect, 6);
+
+// MODIS vegetation composites 2016-20.
+var collection = ee.ImageCollection("MODIS/006/MOD13Q1")
+  .filterDate('2016-01-01', '2020-01-01') 
+  .select('NDVI');
+
+// first image to the map, as a preview.
+var im = ee.Image(collection.first());
+Map.addLayer(im, {}, "first img");
+
+// Vis. param.
+var args = {
+  crs: 'EPSG:3857',  //  Mercator
+  dimensions: '300',
+  region: rect,
+  min: -2000,
+  max: 10000,
+  palette: 'blue,blanchedalmond,green,yellow',
+  framesPerSecond: 1
+};
+
+// video thumbnail and add it to the map.
+var thumb = ui.Thumbnail({
+  // Specifying a collection for "image" animates the sequence of images.
+  image: collection,
+  params: args,
+  style: {
+    position: 'bottom-left',
+    width: '460px'
+  }});
+Map.add(thumb);
+// Define a UI widget and add it to the map.
+var widget = ui.Label({
+  value: 'Normalized difference vegetation index (NDVI) in Greece period 2016.-2020.',
+  style: {width: '400px', height: '80px', fontSize: '20px', color: '336BFF'}
+});30
+Map.add(widget);
+
+// View the UI widget's style properties; an ActiveDictionary.
+print(widget.style());
+
+// ActiveDictionaries are mutable; set a style property.
+widget.style().set('backgroundColor', 'white');
+print(widget.style());
+
+// Define the UI widget's style ActiveDictionary as a variable.
+var widgetStyle = widget.style();
+print(widgetStyle);
+
+// Set the UI widget's style properties from the ActiveDictionary variable.
+widgetStyle.set({border: '5px solid blue'});
+print(widgetStyle);
