@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0aec70;
+}
+
+header {
+  background-color: rgb(10, 236, 112);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 5px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+nav {
+  background-color: #eee;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav div {
+  color: #333;
+  font-size: 18px;
+  line-height: 36px;
+  cursor: pointer;
+  padding: 0 75px;
+}
+
+nav div span {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: translate(5px, -2px) rotate(45deg);
+  -webkit-transform: translate(5px, -2px) rotate(45deg);
+}
+
+nav div + ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+  padding:  0 75px;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+}
+
+nav div:hover + ul,
+nav div:focus-within + ul,
+nav ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+nav a:hover {
+  color: #0aec70;
+}
+
+main {
+  max-width:800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #fff;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 15px;
+  background-color: #0aec70;
+  border-radius: 8px;
+  -webkit-box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.39);
+  transition: box-shadow .5s ease;
+}
+
+.project-link:hover {
+  -webkit-box-shadow: unset;
+  -moz-box-shadow: unset;
+  box-shadow: unset;
+}
+ body{
+  background: url(./4552339-landscape-greece-zakynthos-navagio-beach-beach-nature-sea-coast-rock-zakynthos.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+main{
+  background-color: rgba(255, 255, 255, 0.500);
+}
+
+footer{
+    margin-top: auto;
+}
